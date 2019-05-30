@@ -1,5 +1,6 @@
 (ns clojure-tensorflow.utils
   (:require [clojure-tensorflow.graph :as graph]
+	  									[clojure.pprint]
             [clojure-tensorflow.session :as session])
   (:import [org.tensorflow
             Tensor
@@ -43,7 +44,7 @@
   (cond
     (coll? v)
     (if (coll? (first v))
-      (to-array (map tf-vals v))
+      (into-array (map tf-vals v))
       (case (.getName (type (first v)))
         "java.lang.Long" (int-array v)
         "java.lang.Int" (int-array v)
@@ -55,6 +56,7 @@
     (= (.getName (type v)) "java.lang.Float") (float v)
     ;; anything else
     true v))
+
 
 
 (defn output-shape [tensor]
