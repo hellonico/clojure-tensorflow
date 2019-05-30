@@ -3,6 +3,6 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [clojure-tensorflow "0.2.1"]])
+  :dependencies [[org.clojure/clojure "1.10.0"]
+                 [hellonico/clojure-tensorflow "0.3.0"]])
 
